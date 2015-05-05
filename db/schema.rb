@@ -10,11 +10,47 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140321144528) do
+ActiveRecord::Schema.define(version: 1) do
 
-  create_table "users", force: true do |t|
-    t.string "name"
-    t.string "email"
+  create_table "Movies", force: true do |t|
+    t.string   "name"
+    t.string   "date"
+    t.date     "year_released"
+    t.string   "esrb_rating"
+    t.string   "run_time"
+    t.string   "genre"
+    t.datetime "release_date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "Users", force: true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.string   "username"
+    t.string   "password"
+    t.string   "age"
+    t.string   "gender"
+    t.string   "city"
+    t.boolean  "active"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "producers", force: true do |t|
+    t.string "director"
+    t.string "writers"
+    t.string "stars"
+  end
+
+  create_table "summary", force: true do |t|
+    t.text "summary"
+  end
+
+  create_table "user_reviews", force: true do |t|
+    t.string "your_rating"
+    t.string "rating"
+    t.string "reviews"
   end
 
 end
