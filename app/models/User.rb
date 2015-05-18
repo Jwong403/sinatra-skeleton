@@ -1,4 +1,4 @@
-class Something < ActiveRecord::Base
+class User < ActiveRecord::Base
   def change
     create_table :users do |t|
       t.string :username
@@ -6,5 +6,9 @@ class Something < ActiveRecord::Base
       t.string :password
       t.timestamps
     end
+    has_many :movies
+    has_many :reviews
+    end
+
   end
 end

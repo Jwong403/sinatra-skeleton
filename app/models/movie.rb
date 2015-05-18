@@ -17,5 +17,7 @@ class CreateTables < ActiveRecord::Migration
       t.string :comments
       t.timestamps
     end
+    belongs_to :user
+    has_many :reviews   
   end
 end
