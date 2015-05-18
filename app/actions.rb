@@ -1,9 +1,10 @@
 # Homepage (Root path)
+  
 helpers do
   def current_user
     @current_user = User.find_by(id: session[:user_id]) if session[:user_id]
   end
-end
+end 
 
 get '/' do
   erb :index
@@ -21,19 +22,6 @@ get '/profile' do
     erb :profile
 end
 
-post 'login' do
-  redirect '/'
-end
-
-post '/signup'
-  redirect '/login'
-end
-
-post '/profile' do
-    redirect '/login'
-end
-
-
 post '/login' do
   username = params[:username]
   password = params[:password]
@@ -45,8 +33,7 @@ post '/login' do
   else
     redirect '/login'
   end
-end
-
+end 
 
 post '/signup' do
   username = params[:username]
@@ -60,4 +47,8 @@ post '/signup' do
     session[:user_id] = user.id
     redirect '/'
   end
+end
+
+post '/profile' do
+    redirect '/login'
 end
