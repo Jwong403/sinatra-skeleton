@@ -14,5 +14,10 @@
 </head>
 <body>
   <%= yield %>
+  <nav>
+    <% if current_user %>
+        <a href="/logout">Log out</a>
+    <% end %>
+</nav>
 </body>
 </html>

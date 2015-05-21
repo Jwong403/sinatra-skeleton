@@ -1,7 +1,7 @@
 class CreateTables < ActiveRecord::Migration
 
   def change
-    create_table :Users do |t|
+    create_table :users do |t|
       t.string :name
       t.string :email
       t.string :username
@@ -13,7 +13,7 @@ class CreateTables < ActiveRecord::Migration
       t.timestamps
     end
 
-    create_table :Movies do |t|
+    create_table :movies do |t|
       t.string :name
       t.string :date
       t.date :year_released

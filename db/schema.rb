@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2) do
 
-  create_table "Movies", force: true do |t|
+  create_table "movies", force: true do |t|
     t.string   "name"
     t.string   "date"
     t.date     "year_released"
@@ -20,22 +20,13 @@ ActiveRecord::Schema.define(version: 2) do
     t.string   "run_time"
     t.string   "genre"
     t.datetime "release_date"
+    t.text     "summary"
+    t.string   "director"
+    t.string   "writers"
+    t.string   "stars"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
-  end
-
-  create_table "Users", force: true do |t|
-    t.string   "name"
-    t.string   "email"
-    t.string   "username"
-    t.string   "password"
-    t.string   "age"
-    t.string   "gender"
-    t.string   "city"
-    t.boolean  "active"
-    t.datetime "created_at"
-    t.datetime "updated_at"
   end
 
   create_table "producers", force: true do |t|
@@ -59,4 +50,16 @@ ActiveRecord::Schema.define(version: 2) do
     t.datetime "reviewed_on"
   end
 
+  create_table "users", force: true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.string   "username"
+    t.string   "password"
+    t.string   "age"
+    t.string   "gender"
+    t.string   "city"
+    t.boolean  "active"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 end

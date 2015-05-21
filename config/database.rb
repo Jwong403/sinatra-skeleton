@@ -5,8 +5,14 @@ configure do
   end
 
   set :database, {
+    if development?
+  set :database, {
     adapter: "sqlite3",
     database: "db/db.sqlite3"
+  }
+else
+  set :database, ENV['DATABASE_URL']
+end
   }
 
   # Load all models from app/models, using autoload instead of require
@@ -15,5 +21,4 @@ configure do
     filename = File.basename(model_file).gsub('.rb', '')
     autoload ActiveSupport::Inflector.camelize(filename), model_file
   end
-
 end

@@ -1,1 +1,20 @@
 <h1>Home Page</h1>
+<a href="/movies/new" class="btn btn-success">Add a Movie!</a>
+<section id="movie-container">
+    <% @movies.each do |movie| %>
+        <div class="movie">
+            <img src="<%= movie.pic_url %>"><br>
+            <h2><%= movie.title %></h2>
+        </div>
+    <% end %>
+</section>
+
+#movie-container {
+    -webkit-column-count: 3;
+    -webkit-column-gap: 12px;
+}
+
+.movie {
+    margin: 10px; 
+    width: 30%;
+}
